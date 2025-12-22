@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:spring="http://www.w3.org/1999/xhtml" lang="EN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Refrigerator Map Application</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{../static/css/style.css}"/>
+    <link rel="stylesheet" href="https://use.typekit.net/dem2ufl.css">
+    <script>
+        window.addEventListener('beforeunload', () => {
+            localStorage.setItem('scrollPositionToSave', window.scrollY);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const scrollpos = localStorage.getItem('scrollPositionToSave');
+            if (scrollpos) {
+                window.scrollTo(0, parseInt(scrollpos));
+            }
+        });
+    </script>
+</head>
+<body>
+<div class="heading">
+    <!-- The th:src attribute is used to reference the image -->
+    <img th:src="@{../static/images/logo.png}" alt="RefrigeratorMap Logo" id="logo"/>
+
+    <h1 class="descriptionText">Welcome to the food inventory application.</h1>
+    <h3 class="descriptionText">Know what’s in your food storage; don’t forget about it!
+
+        Organize your food for greater efficiency.</h3>
+</div>
+<div class="stacked">
+    <div class="gridLayoutSection">
+        <div class="column">
+            <div class="card">
+                <div class="lightGreenHeader">
+                    <h2 class="lightGreenHeaderFont1">Cheese Drawer</h2>
+                    <h3 class="lightGreenHeaderFont2">Food items</h3>
+                </div>
+                <table>
+                    <tr th:each="cheese : ${cheeses}" hello>
+                        <td th:text="${cheese.type}" class="item"></td>
+                        <td th:text="${cheese.quantity}" class="item"></td>
+                        <td>
+                        <td>
+                            <form th:action="@{/cheese/{id}(id=${cheese.id})}" th:method="delete">
+                                <button type="submit" class="buttonStatic">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+                <a th:href="@{/add}">
+                    <button class="buttonStatic">Add Cheese</button>
+                </a>
+            </div>
+            <div class="flexContainer">
+                <div class="bottomColumnGray"></div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="lightGreenHeader">
+                    <h2 class="lightGreenHeaderFont1">Vegetable Crisper</h2>
+                    <h3 class="lightGreenHeaderFont2">Food items</h3>
+                </div>
+
+
+                <table>
+                    <tr th:each="vegetable: ${vegetables}" hello>
+                        <td th:text="${vegetable.type}" class="item"></td>
+                        <td th:text="${vegetable.quantity}" class="item"></td>
+                        <td>
+                        <td>
+                            <form th:action="@{/vegetable/{id}(id=${vegetable.id})}" th:method="delete">
+                                <button type="submit" class="buttonStatic">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+
+
+                <a th:href="@{/addvegetable}">
+                    <button class="buttonStatic">Add Vegetable</button>
+                </a>
+            </div>
+            <div class="flexContainer">
+                <div class="bottomColumnGray"></div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="lightGreenHeader">
+                    <h2 class="lightGreenHeaderFont1">Fruit Drawer</h2>
+                    <h3 class="lightGreenHeaderFont2">Food items</h3>
+                </div>
+                <table>
+                    <tr th:each="fruit: ${fruits}" hello>
+                        <td th:text="${fruit.type}" class="item"></td>
+                        <td th:text="${fruit.quantity}" class="item"></td>
+                        <td>
+                        <td>
+                            <form th:action="@{/fruit/{id}(id=${fruit.id})}" th:method="delete">
+                                <button type="submit" class="buttonStatic">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+                <a th:href="@{/addfruit}">
+                    <button class="buttonStatic">Add Fruit</button>
+                </a>
+            </div>
+            <div class="flexContainer">
+                <div class="bottomColumnGray"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="stacked">
+    <div class="gridLayoutSection">
+        <!--Shelf 1-->
+        <div class="column">
+            <div class="card">
+                <div class="lightGreenHeader">
+                    <h2 class="lightGreenHeaderFont1">Shelf 1</h2>
+                    <h3 class="lightGreenHeaderFont2">Food items</h3>
+                </div>
+                <table>
+                    <tr th:each="shelf: ${shelves}">
+                        <td th:text="${shelf.type}" class="item"></td>
+                        <td th:text="${shelf.quantity}" class="item"></td>
+                        <td>
+                        <td>
+                            <form th:action="@{/shelf/{id}(id=${shelf.id})}" th:method="delete">
+                                <button type="submit" class="buttonStatic">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+
+                <a th:href="@{/addshelf}">
+                    <button class="buttonStatic">Add a Food to Shelf 1</button>
+                </a>
+
+            </div>
+            <div class="flexContainer">
+                <div class="bottomColumnGray"></div>
+            </div>
+        </div>
+        <!--Shelf 2-->
+
+        <div class="column">
+            <div class="card">
+                <div class="lightGreenHeader">
+                    <h2 class="lightGreenHeaderFont1">Shelf 2</h2>
+                    <h3 class="lightGreenHeaderFont2">Food items</h3>
+                </div>
+                <table>
+                    <tr th:each="shelf2: ${shelves2}" hello>
+                        <td th:text="${shelf2.type}" class="item"></td>
+                        <td th:text="${shelf2.quantity}" class="item"></td>
+                        <td>
+                            <form th:action="@{/shelf2/{id}(id=${shelf2.id})}" th:method="delete">
+                                <button type="submit" class="buttonStatic">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+
+                <a th:href="@{/addshelf2}">
+                    <button class="buttonStatic">Add a Food to Shelf 2</button>
+                </a>
+            </div>
+            <div class="flexContainer">
+                <div class="bottomColumnGray"></div>
+            </div>
+        </div>
+
+        <!--Shelf 3-->
+
+        <div class="column">
+            <div class="card">
+                <div class="lightGreenHeader">
+                    <h2 class="lightGreenHeaderFont1">Shelf 3</h2>
+                    <h3 class="lightGreenHeaderFont2">Food items</h3>
+                </div>
+                <table>
+                    <tr th:each="shelf3: ${shelves3}" hello>
+                        <td th:text="${shelf3.type}" class="item"></td>
+                        <td th:text="${shelf3.quantity}" class="item"></td>
+                        <td>
+                        <td>
+                            <form th:action="@{/shelf3/{id}(id=${shelf3.id})}" th:method="delete">
+                                <button type="submit" class="buttonStatic">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+
+                <a th:href="@{/addshelf3}">
+                    <button class="buttonStatic">Add a Food to Shelf 3</button>
+                </a>
+            </div>
+            <div class="flexContainer">
+                <div class="bottomColumnGray"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Door -->
+<div class="stacked">
+    <div class="gridLayoutSection" id="doorSpecial">
+        <div class="column">
+            <div class="card">
+                <div class="lightGreenHeader">
+                    <h2 class="lightGreenHeaderFont1">Door</h2>
+                    <h3 class="lightGreenHeaderFont2">Food items</h3>
+                </div>
+                <table>
+                    <tr th:each="door: ${doors}" hello>
+                        <td th:text="${door.type}" class="item"></td>
+                        <td th:text="${door.quantity}" class="item"></td>
+                        <td>
+                        <td>
+                            <form th:action="@{/door/{id}(id=${door.id})}" th:method="delete">
+                                <button type="submit" class="buttonStatic">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+
+                <a th:href="@{/adddoor}">
+                    <button class="buttonStatic">Add a Food to the Shelves in the Door</button>
+                </a>
+            </div>
+            <div class="flexContainer">
+                <div class="bottomColumnGray"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottomColumn"></div>
+
+    <div class="stacked" id="margintop">
+        <footer class="lightGreenFooter">
+            <div class="footerFlexContainer">
+                <div class="leftFooterContainer">
+                    <h2 class="lightGreenHeaderFont1">Refrigerator Map Application; Copyright 2025</h2>
+                    <h4 class="descriptionText2">Code: Java, Spring Boot, and Thymeleaf.</h4>
+                    <h4 class="descriptionText2">Style: HTML and CSS.</h4>
+                </div>
+                <div class="rightFooterContainer">
+                    <img th:src="@{../static/images/logo.png}" id="logo2" alt="RefrigeratorMap Logo"/>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+</body>
