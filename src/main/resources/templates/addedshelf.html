@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="EN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fridge Map Application</title>
+    <link rel="stylesheet" type="text/css"
+          th:href="@{../static/css/style.css}"/>
+</head>
+<body>
+<div class="heading">
+    <a th:href="@{/}">
+        <img th:src="@{../static/images/logo.png}" alt="RefrigeratorMap Logo" id="logo"/>
+    </a>
+</div>
+<div class="subPageStyle">
+    <h1 class="headingText">Your new addition to shelf 1:</h1>
+    <h2 class="headingText">Name:</h2>
+    <p class="paragraphText" th:text=${newshelf.type}></p>
+    <h2 class="headingText">Quantity:</h2>
+    <p class="paragraphText" th:text=${newshelf.quantity}></p>
+    <a th:href="@{return-home}">
+        <button class="buttonStatic"> Home</button>
+    </a>
+</div>
+</body>

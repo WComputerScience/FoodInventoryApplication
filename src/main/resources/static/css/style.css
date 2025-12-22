@@ -1,0 +1,292 @@
+body {
+    background-color: white;
+    width: 100%;
+    margin: 0;
+    display: inline-block;
+}
+
+
+.gridLayoutSection {
+    width: 80%;
+    display: flex;
+    align-content: stretch;
+    flex-direction: column;
+    row-gap: 15%;
+    column-gap: 15%;
+    flex-flow: wrap;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.stacked {
+    display: block;
+    width: 100%;
+    padding: 0;
+
+}
+
+
+.column {
+    align-self: baseline;
+    flex-basis: calc(33.33% - 15%);
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+
+}
+
+.card {
+    align-self: center;
+    height: auto;
+    flex-basis: 100%;
+    width: 100%;
+}
+
+.bottomColumnGray {
+    background-color: #FF7154;
+    height: 15px;
+    margin-top: 2rem;
+    margin-bottom: 0;
+    flex-basis: 100%;
+    width: 100%;
+    align-self: flex-end;
+
+
+}
+.bottomColumn {
+    width: 80%;
+    margin-top: 2rem;
+    height: 13px;
+    background-color: #6A8070;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 2rem;
+
+}
+
+
+.lightGreenHeader {
+    margin-top: 5rem;
+    background-color: #D4FCDF;
+    padding: 3rem;
+    margin-bottom: 1rem;
+}
+
+.lightGreenFooter {
+    background-color: #6AFFF8;
+    padding: 3rem;
+
+
+}
+
+#margintop2 {
+    margin-top: 9rem;
+}
+
+.subPageStyle {
+    margin-right: 10%;
+    margin-left: 10%;
+    width: 80%;
+    margin-top: 10%;
+}
+
+.inputText {
+    font-family: tablet-gothic, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.errorstyle{
+    margin-top: 3rem;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #FF7154;
+    color: #FF7154;
+    padding: 2rem;
+}
+
+
+.headingText {
+    font-family: "tablet-gothic", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.paragraphText {
+    font-family: tablet-gothic, sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.lightGreenHeaderFont1 {
+    font-family: "tablet-gothic", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.lightGreenHeaderFont2 {
+    font-family: "runda", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.item {
+    font-family: "tablet-gothic", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.descriptionText {
+    font-family: "tablet-gothic", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 2rem;
+}
+
+.descriptionText2 {
+    font-family: "tablet-gothic", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+
+.flexContainer {
+    display: flex;
+}
+
+
+button {
+
+    border-color: #FF7154;
+    border-style: solid;
+    box-shadow: none;
+    background-color: #FFFFFF;
+    border-width: 2px;
+    color: black;
+    margin: 5px;
+    font-family: "tablet-gothic", sans-serif;
+    font-weight: 600;
+    font-style: oblique;
+    font-size:.95rem;
+
+}
+
+
+.buttonStatic {
+    border-color: #FF7154;
+    background-color: #FFFFFF;
+    border-width: 2px;
+    color: black;
+    box-shadow: none;
+    margin: 5px;
+    border-style: solid;
+    font-family: "tablet-gothic", sans-serif;
+    font-weight: 600;
+    font-style: oblique;
+    font-size: .95rem;
+}
+
+.buttonStatic:hover {
+    background-color: #6AFFF8;
+    color: black;
+    border-color: #FF7154;
+    border-width: 2px;
+}
+
+.buttonStatic:active {
+    background-color: #A55851;
+    color: white;
+    transition-duration: .41s;
+    border-width: 2px;
+    border-color: #A55851;
+    border-style: solid;
+
+}
+
+.buttonClicked {
+    color: #FFFFFF;
+    background-color: #855A51;
+}
+
+.heading {
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    background-color: white;
+}
+
+#doorSpecial {
+    width: 18.67%;
+}
+
+p {
+    font-size: 2rem;
+}
+
+#logo {
+    margin-top: 4rem;
+    width: 40%;
+    max-width: 850px;
+    min-width: 450px;
+    margin-bottom: 4rem;
+}
+
+#logo2 {
+    width: 250px;
+    max-width: 250px;
+    min-width: 200px;
+    margin-bottom: 2rem;
+}
+
+.footerFlexContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 45%;
+    flex-direction: column;
+
+}
+
+.leftFooterContainer {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 45%;
+    flex-wrap: wrap;
+
+}
+
+.rightFooterContainer {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 45%;
+    margin-left: auto;
+    margin-bottom: auto;
+    align-self: flex-start
+}
+
+p{
+    font-size: 2rem;
+}
+
+@media (max-width: 1200px) {
+    .gridLayoutSection {
+        flex-direction: column;
+    }
+
+
+    .column {
+        width: 100%;
+    }
+
+    #doorSpecial {
+        width: 80%;
+
+
+    }
+}

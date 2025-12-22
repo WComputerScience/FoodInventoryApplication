@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:spring="http://www.w3.org/1999/xhtml" lang="EN">
+<head>
+    <meta charset="UTF-8">
+    <title>Refrigerator Map Application</title>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{../static/css/style.css}"/>
+    <link rel="stylesheet" href="https://use.typekit.net/dem2ufl.css">
+</head>
+<body>
+<div class="heading">
+    <a th:href="@{/}">
+        <img th:src="@{../static/images/logo.png}" alt="RefrigeratorMap Logo" id="logo"/>
+    </a>
+</div>
+<div class="subPageStyle">
+
+    <h1 class="headingText">Please add an item to shelf 3.</h1>
+
+    <form action="#" th:action="@{/addshelf3}" th:object="${shelf3}" method="POST">
+        <table>
+            <tr>
+                <td><label class="paragraphText">Enter a food type name:</label></td>
+                <td><label>
+                    <input type="text" th:field="*{type}" placeholder="Enter a food item type" class="inputText">
+                </label></td>
+
+                <td><label class="paragraphText">Enter a fruit quantity of individual units:</label></td>
+                <td>
+                    <label>
+                        <input type="text" th:field="*{quantity}" placeholder="Enter a quantity:" class="inputText">
+                    </label>
+                </td>
+            </tr>
+        </table>
+        <button type="submit" value="Submit">Add to Shelf 3</button>
+
+        <div th:if="${#fields.hasErrors()}" class="errorstyle">
+            <h2 class="paragraphText">Please correct the following errors in your form:</h2>
+            <ul th:each="err : *{#fields.errors()}" class="paragraphText">
+                <li th:text="${err}" class="paragraphText"></li>
+            </ul>
+        </div>
+    </form>
+</div>
+</body>
